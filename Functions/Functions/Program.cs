@@ -20,9 +20,19 @@ namespace Functions
             {
                 if (select == 1)
                 {
+                    Console.WriteLine("Please input a number:");
                     string input1 = Console.ReadLine();
-                    Console.WriteLine("Vastaus: " + Stars(input1));
 
+                    if (int.TryParse(input1, out int n) == true && n > 0)
+                    {
+                        Console.WriteLine("Vastaus: " + Stars(n));
+                    } else if ( n <= 0)
+                    {
+                        Console.WriteLine("Numero " + n + " ei ole sallittu luku.");
+                    } else
+                    {
+                        Console.WriteLine("Vain luvut ovat hyväksyttyjä.");
+                    }
                 }
                 else if (select == 2)
                 {
@@ -60,9 +70,14 @@ namespace Functions
             }
         }
 
-        static string Stars(string input)
+        static string Stars(int input)
         {
-            string result = "N/A";
+            string result = "";
+
+            for (int i = input; i > 0; i--)
+            {
+                result += "*";
+            }
 
             return result;
         }
