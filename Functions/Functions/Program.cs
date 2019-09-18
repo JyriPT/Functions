@@ -21,9 +21,9 @@ namespace Functions
                 if (select == 1)
                 {
                     Console.WriteLine("Please input a number:");
-                    string input1 = Console.ReadLine();
+                    input = Console.ReadLine();
 
-                    if (int.TryParse(input1, out int n) == true && n > 0)
+                    if (int.TryParse(input, out int n) == true && n > 0)
                     {
                         Console.WriteLine("Vastaus: " + Stars(n));
                     } else if ( n <= 0)
@@ -36,10 +36,26 @@ namespace Functions
                 }
                 else if (select == 2)
                 {
-                    int input21 = 1;
-                    int input22 = 2;
+                    Console.Write("Please input a number: ");
+                    input = Console.ReadLine();
 
-                    Minimi(input21, input22);
+                    if (int.TryParse(input, out int input1) == true)
+                    {
+                        Console.Write("Please input a second number:");
+                        input = Console.ReadLine();
+
+                        if (int.TryParse(input, out int input2) == true)
+                        {
+                            Console.WriteLine("Luku " + Minimi(input1, input2) + " on pienempi kuin <PH>.");
+                        } else
+                        {
+                            Console.WriteLine("Number input is required, please reboot.");
+                        }
+
+                    } else
+                    {
+                        Console.WriteLine("Number input is required, please reboot.");
+                    }
                 }
                 else if (select == 3)
                 {
