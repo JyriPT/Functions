@@ -59,7 +59,10 @@ namespace Functions
                 }
                 else if (select == 3)
                 {
-                    WhatEven();
+                    int lowerBound = 3;
+                    int upperBound = 47;
+
+                    int RetNumber = numberFromRange(lowerBound, upperBound);
                 }
                 else if (select == 4)
                 {
@@ -100,12 +103,23 @@ namespace Functions
 
         static int Minimi(int input1, int input2)
         {
-            return input1;
+            if (input1 < input2)
+            {
+                return input1;
+            } else if (input2 < input1)
+            {
+                return input2;
+            } else
+            {
+                return input1;
+            }
         }
 
-        static void WhatEven()
+        static int numberFromRange(int lower, int upper)
         {
+            int input = 0;
 
+            return input;
         }
 
         static int Biggest(int input1, int input2, int input3, int input4, int input5, int input6, int input7, int input8, int input9, int input10)
