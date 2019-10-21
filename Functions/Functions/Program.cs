@@ -63,6 +63,7 @@ namespace Functions
                     int upperBound = 47;
 
                     int RetNumber = numberFromRange(lowerBound, upperBound);
+                    Console.WriteLine("Given number was " + RetNumber + ".");
                 }
                 else if (select == 4)
                 {
@@ -117,9 +118,33 @@ namespace Functions
 
         static int numberFromRange(int lower, int upper)
         {
-            int input = 0;
+            int number = 0;
+            int processed = 0;
 
-            return input;
+            Console.WriteLine("Please input number between " + lower + " and " + upper + ":");
+            string input = Console.ReadLine();
+
+            do
+            {
+                if (int.TryParse(input, out number) == false)
+                {
+                    Console.WriteLine("Invalid input, input must be a number.");
+                    Console.WriteLine();
+                    Console.WriteLine("Please input number between " + lower + " and " + upper + ":");
+                    input = Console.ReadLine();
+
+                } else if (number < lower || number > upper)
+                {
+                    Console.WriteLine("Invalid input, number must be within given bounds.");
+                    Console.WriteLine();
+                    Console.WriteLine("Please input number between " + lower + " and " + upper + ":");
+                    input = Console.ReadLine();
+                }
+
+            } while (number < lower || number > upper);
+
+            processed = number;
+            return processed;
         }
 
         static int Biggest(int input1, int input2, int input3, int input4, int input5, int input6, int input7, int input8, int input9, int input10)
