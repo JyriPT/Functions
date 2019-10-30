@@ -47,7 +47,17 @@ namespace Functions
 
                         if (int.TryParse(input, out int input2) == true)
                         {
-                            Console.WriteLine("Luku " + Minimi(input1, input2) + " on pienempi kuin <PH>.");
+                            int small = Minimi(input1, input2);
+
+                            if (small == input1)
+                            {
+                                Console.WriteLine("Luku " + input1 + " on pienempi kuin " + input2 + ".");
+
+                            } else if (small == input2)
+                            {
+                                Console.WriteLine("Luku " + input2 + " on pienempi kuin " + input1 + ".");
+
+                            }
                         } else
                         {
                             Console.WriteLine("Number input is required, please reboot.");
